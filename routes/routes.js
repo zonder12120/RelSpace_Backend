@@ -1,13 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const controller = require('../controllers/controller');
+const releaseService = require('../services/releaseService');
 
-router.post('/selectedWeek', async (req, res) => {
-        if (!req.body) {
-            return res.status(400).send('Bad Request');
-        }
-
-        await controller.home(req, res);
-});
+router.post('/getReleasesForSelectedWeek', releaseService.getReleasesForSelectedWeek);
+router.post('/addRelease', releaseService.addRelease);
+router.post('/deleteRelease', releaseService.deleteRelease);
 
 module.exports = router;

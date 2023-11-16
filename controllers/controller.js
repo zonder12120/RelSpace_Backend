@@ -1,11 +1,12 @@
 const { Pool } = require("pg");
+const {DB_USER, DB_HOST, DB_NAME, DB_PASS, DB_PORT} = require("../_constants/constants");
 
 const pool = new Pool({
-    user: 'admin',
-    host: 'localhost',
-    database: 'postgres',
-    password: 'jhFOP!109',
-    port: 5432,
+    user: DB_USER,
+    host: DB_HOST,
+    database: DB_NAME,
+    password: DB_PASS,
+    port: DB_PORT,
 });
 
 module.exports.home = async (req, res) => {
@@ -19,7 +20,7 @@ module.exports.home = async (req, res) => {
             return;
         }
 
-        const releaseList = rows.map((row) => row.releasenumber); // Исправлено здесь
+        const releaseList = rows.map((row) => row.releasenumber);
 
         return res.json({
             message: 'Релизы найдены',

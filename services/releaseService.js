@@ -1,5 +1,5 @@
 const { Pool } = require('pg');
-const {stageNames} = require('_constants/constants');
+const {stageNames} = require('../_constants/constants');
 
 const pool = new Pool({
     user: 'admin',

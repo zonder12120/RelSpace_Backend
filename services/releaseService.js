@@ -17,7 +17,7 @@ const getReleasesForSelectedWeek = async (req, res) => {
     try {
         const { year, monthNumber, weekIndex } = req.body;
 
-        if (year && monthNumber && weekIndex) {
+        if (year && monthNumber) {
             selectedYear = year;
             selectedMonthNumber = monthNumber;
             selectedWeekIndex = weekIndex;
